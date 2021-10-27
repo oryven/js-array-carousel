@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-carousel {
+    display: flex;
+    width: 50%;
+    border: 1px solid black;
+    height: 300px;
+}
+
+.items {
+    width: 80%;
+    height: 100%;
+}
+
+.thumbs {
+    width: 20%;
+    height: 100%;
+}
+
+.thumb {
+    width: 100%;
+    border: 1px solid black;
+    height: calc(100% / 5);
+}
