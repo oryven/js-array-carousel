@@ -14,7 +14,7 @@
 .container-carousel {
     display: flex;
     width: 50%;
-    border: 1px solid black;
+    
     height: 300px;
 }
 
@@ -39,6 +39,7 @@
 .items img, .thumbs img {
     width: 100%;
     height: 100%;
+    filter: opacity(0.5);
 }
 
 .thumbs {
@@ -49,7 +50,7 @@
 
 .thumb {
     width: 100%;
-    border: 1px solid black;
+    
     height: calc(100% / 5);
 }
 
@@ -68,9 +69,15 @@
 }
 
 i {
+    cursor: pointer;
     color: grey;
 }
 
 .active {
     display: block;
+    border: 1px solid orange;
+}
+
+.active img {
+    filter: opacity(1);
 }

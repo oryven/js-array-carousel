@@ -76,6 +76,62 @@ thumbsCont.innerHTML += contenutoThumb;
 
 document.getElementsByClassName("thumb")[0].classList.add("active");
 
-// creo una funzione con un evento "click" con all'interno una condizione per aggiungere e rimuovere la classe active
+// creo una funzione con un evento "click" dove all'interno aggiungo e rimuovo la classe active
+
+let numeroClick = 0;
+
+
+document.querySelector(".avanti").addEventListener("click",
+
+function(){
+
+    if (numeroClick < items.length -1){
+
+        ++numeroClick;
+
+    } else {
+
+        numeroClick = 0;
+
+    }
+
+    document.querySelector(".item.active").classList.remove("active");
+
+    document.getElementsByClassName("item")[numeroClick].classList.add("active");
+
+    document.querySelector(".thumb.active").classList.remove("active");
+
+    document.getElementsByClassName("thumb")[numeroClick].classList.add("active");
+
+}
+
+);
+
+
+document.querySelector(".indietro").addEventListener("click",
+
+function(){
+
+    if (numeroClick === 0){
+
+        numeroClick = items.length -1;
+
+    } else {
+
+        --numeroClick;
+
+    }
+
+    document.querySelector(".thumb.active").classList.remove("active");
+
+    document.querySelector(".item.active").classList.remove("active");
+
+    document.getElementsByClassName("item")[numeroClick].classList.add("active");
+
+    document.getElementsByClassName("thumb")[numeroClick].classList.add("active");
+
+}
+
+);
 
 
