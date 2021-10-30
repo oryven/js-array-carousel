@@ -27,12 +27,12 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
 
-/*  1. creo le due costanti per richiare i div ch dovranno          contenere le immagini
-    2. creo le due variabili vuote verrano sovrascritte dagli itmes
+/*  1. creo le due costanti per richiamare i div che dovranno contenere le immagini
+    2. creo le due variabili vuote che verrano sovrascritte dagli itmes
       2.1 creo un ciclo per inserire le immagini all'interno delle variabili
     3. stampo nel dom gli elementi creati duranti il ciclio
     4. creo una funzione con evento click
-       4.1 se clicco sulle freccie avanti e indietro per aggiungere o rimuovere la classe active
+       4.1 cliccando sulle freccie avanti e indietro aggiungo o rimuovo la classe active
 */
 
 // richiamo con delle variabili gli elementi che dovranno contenere le immagini
@@ -78,30 +78,30 @@ document.getElementsByClassName("thumb")[0].classList.add("active");
 
 // creo una funzione con un evento "click" dove all'interno aggiungo e rimuovo la classe active
 
-let numeroClick = 0;
+let activePosition = 0;
 
 
 document.querySelector(".avanti").addEventListener("click",
 
 function(){
 
-    if (numeroClick < items.length -1){
+    if (activePosition < items.length -1){
 
-        ++numeroClick;
+        activePosition = activePosition + 1;
 
     } else {
 
-        numeroClick = 0;
+        activePosition = 0;
 
     }
 
     document.querySelector(".item.active").classList.remove("active");
 
-    document.getElementsByClassName("item")[numeroClick].classList.add("active");
+    document.getElementsByClassName("item")[activePosition].classList.add("active");
 
     document.querySelector(".thumb.active").classList.remove("active");
 
-    document.getElementsByClassName("thumb")[numeroClick].classList.add("active");
+    document.getElementsByClassName("thumb")[activePosition].classList.add("active");
 
 }
 
@@ -112,13 +112,13 @@ document.querySelector(".indietro").addEventListener("click",
 
 function(){
 
-    if (numeroClick === 0){
+    if (activePosition === 0){
 
-        numeroClick = items.length -1;
+        activePosition = items.length -1;
 
     } else {
 
-        --numeroClick;
+        activePosition = activePosition - 1;
 
     }
 
@@ -126,9 +126,9 @@ function(){
 
     document.querySelector(".item.active").classList.remove("active");
 
-    document.getElementsByClassName("item")[numeroClick].classList.add("active");
+    document.getElementsByClassName("item")[activePosition].classList.add("active");
 
-    document.getElementsByClassName("thumb")[numeroClick].classList.add("active");
+    document.getElementsByClassName("thumb")[activePosition].classList.add("active");
 
 }
 
